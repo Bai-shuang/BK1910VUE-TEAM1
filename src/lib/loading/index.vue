@@ -1,6 +1,6 @@
 <template>
         <div id="loader-container">
-            <p id="loadingText">Loading</p>
+            <p id="loadingText">努力加载中...</p>
         </div>
 </template>
 

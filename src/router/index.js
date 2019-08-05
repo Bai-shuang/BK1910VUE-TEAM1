@@ -8,9 +8,14 @@ Vue.use(VueRouter)
 
 export default new VueRouter ({
     routes:[
+        {
+            path:"/",
+            redirect:"/home"
+        },
         home,
         cityBox,
         planeTicket,
         trainTicket
-    ]
+    ],
+     
 })

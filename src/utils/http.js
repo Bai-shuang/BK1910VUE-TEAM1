@@ -39,14 +39,13 @@
 //     }
 // }
 import axios from "axios";
-import Loading  from "../lib/loading/index.js"
+// import Loading  from "../lib/loading/index.js"
 // import qs from "qs"
 // import loading from "../lib/loading/index.js"
 
 // let vm = loading()
-let vm=Loading();
+// let vm=Loading();
 const server = axios.create({
-    baseURL:"https://m.ly.com",
     timeout:5000,
     withCredentials:true,
     changeOrigin:true,
@@ -58,9 +57,10 @@ server.interceptors.request.use((config)=>{
        // config.params = {...config.data}
     }else if(config.method.toUpperCase() == "POST"){
         config.headers["content-type"] = "appliaction/x-www-form-urlencoded";
+        config.headers["Access-Control-Allow-Origin"]="*";
         //config.data = qs.stringify(config.data)
     }
-    vm.handlemount();
+    // vm.handlemount();
     return config;
 },(err)=>{
     Promise.reject(err);
@@ -68,8 +68,9 @@ server.interceptors.request.use((config)=>{
 
 
 server.interceptors.response.use((res)=>{
+   
     if(res.statusText == "OK"){
-        vm.handleDestory();
+        // vm.handleDestory();
         return res.data
     }
 
@@ -81,7 +82,6 @@ server.interceptors.response.use((res)=>{
 
 export default (method,url,data)=>{
     if(method.toUpperCase() == "GET"){
-        console.log(data,222);
         return server.get(url,{
             params:data
         })
