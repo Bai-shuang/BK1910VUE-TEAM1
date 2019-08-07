@@ -4,6 +4,10 @@ import home from "./home";
 import cityBox from "./cityBox";
 import planeTicket from "./planeTicket";
 import trainTicket from "./trainTicket";
+import one from "./one"
+import two from "./two"
+import three from "./three"
+import citylist from "./citylist";
 Vue.use(VueRouter)
 
 export default new VueRouter ({
@@ -11,6 +15,14 @@ export default new VueRouter ({
         home,
         cityBox,
         planeTicket,
-        trainTicket
+        trainTicket,
+  	one,
+        two,
+        three,
+        citylist,
+   	{
+            path:"/",
+            redirect:"/home"
+        },
     ]
 })

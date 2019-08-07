@@ -1,6 +1,11 @@
 <template>
     <div id="app">
-        <router-view></router-view>
+   <keep-alive>
+      
+<router-view></router-view>
+ 
+</keep-alive>
+ 
         <Loading/>
     </div>
 </template>
@@ -18,5 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
+#app{height: 100%;}
+
 
 </style>

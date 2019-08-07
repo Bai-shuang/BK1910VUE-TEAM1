@@ -1,10 +1,18 @@
 <template>
     <div>
-        123
+          <keep-alive>
+      <router-view></router-view>
+        </keep-alive>
+        <TabBer/>
     </div>
 </template>
 <script>
+import TabBer from "common/tabBar";
 export default {
-    name:"Home"
+  components:{
+    TabBer,
+  },
+  
+
 }
 </script>

@@ -1,13 +1,20 @@
 const path = require("path")
 module.exports = {
     devServer:{
-        proxy:{
-            "/api":{
-                target:"https://m.ly.com",
-                changeOrigin:true
-            }
-        }
-    },
+      "/api":{
+                target:"http://39.97.33.178",
+                changeOrigin:true,
+            },
+        "/lvyou":{
+            // µÿ÷∑
+            target:"https://m.ly.com",
+            changeOrigin:true,
+            // ws: false,
+            pathRewrite: {
+                "^/lvyou": ""
+                }
+        },
+        },
     configureWebpack:{
         resolve:{
             alias:{
