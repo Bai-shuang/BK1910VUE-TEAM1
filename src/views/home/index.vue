@@ -13,7 +13,7 @@
         </h2>
         <span></span>
     </div>
-     <div class="contationer">
+     <div class="contationer">       
         <div class="banner">
             <img src="//pic4.40017.cn/index/slide/2017/03/21/11/86PQJh.jpg.webp" alt="">
         </div>
@@ -219,14 +219,15 @@
     </div>
 </template>
 <script>
-import {home_now_api} from 'api/home'
+import {home_api} from 'api/home.js'
 export default {
     name:"home",
     async created () {
-       let data = await home_now_api();
+       let data=await home_api()
        console.log(data)
     }
 }
+
 </script>
 
 <style >

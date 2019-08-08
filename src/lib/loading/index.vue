@@ -1,5 +1,5 @@
 <template>
-        <div id="loader-container">
+        <div id="loader-container" v-if="flag">
             <p id="loadingText">努力加载中...</p>
         </div>
 </template>

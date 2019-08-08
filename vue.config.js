@@ -4,10 +4,7 @@ module.exports = {
         proxy:{
             "/api":{
                 target:"https://m.ly.com",
-                changeOrigin:true,
-                pathRewrite: {
-                    "^/api": ""
-                    }
+                changeOrigin:true
             }
         }
     },
